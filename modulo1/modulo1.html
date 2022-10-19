@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Treino</title>
+</head>
+<body>
+  <marquee direction="right">kkkkkk</marquee> <!--marquee está OBSOLETA!-->
+  <h1>Parágrafos e Quebras de linhas</h1>
+  <hr>
+  <p>
+    Você pode escrever um paragrafo de qualquer jeito.
+    Basta colocar tudo no meio do par de tags &lt;p&gt;
+    e &lt;/p&gt; <!-- LESS THAN / GREATER THAN -->
+  </p>
+  <p>
+    Se precisar quebrar o texto em algum lugar 
+    especifico <br> como esse, voce pode usar a tag br.
+  </p>
+  <p>Vamos adicionar alguns simbolos especiais:
+    &reg;
+    &copy;
+    &trade;
+    &euro;
+    &pound;
+    &yen;
+    &cent;
+    &Delta;
+    &uarr;
+  </p>
+  <p>Vamos adicionar alguns emoji:
+    &#x1F596;
+    &#X1F913;
+  </p>
+  <h1>Testando carga e Imagens</h1>
+  <hr>
+  <p>Abaixo voce vai ver uma imagem que esta na mesma pasta</p>
+  <img src="logo-nike200.jpg" alt="logo nike">
+  <p>Tambem podemos pegar imagens externas</p>
+  <img src="https://www.svgrepo.com/show/303206/javascript-logo.svg" alt="logo javascript">
+  <h1>Hierarquia de Títulos</h1>
+  <hr>
+  <h1>Entendendo Portugal</h1>
+    <h2>Introdução</h2>
+      <h3>Justificação da Temática</h3>
+      <h3>Caráter excecional</h3>
+    <h2>Ordenamento do Território em Portugal</h2>
+      <h3>Os instrumentos de gestão</h3>
+  <h1>Principais Formatações</h1>
+  <hr>
+    <h2>Negrito/Destaque</h2>
+      <p>Nesta frase temos um <b>termo em negrito</b> usando
+      a tag B (não semantica)</p>
+      <p>Nesta frase temos um <strong>termo em negrito</strong> usando
+      a tag B (semantica)</p>
+    <h2>Itálico/Ênfase</h2>
+      <p>Nesta frase temos um <i>termo em italico</i> usando
+      a tag i (não semantica)</p>
+      <p>Nesta frase temos um <em>termo em italico</em> usando
+      a tag em (semantica)</p>
+  <h1>Formatações Adicionais</h1>
+  <hr>
+    <p>Podemos criar também <mark style="background-color:lime">um texto marcado</mark>
+      usando a tag MARK com a cor modificada .</p>
+    <p>E no outro paragrafo, temos <mark>outro texto marcado</mark>
+      com a cor padrão.</p>
+    <h2>Texto grande e pequeno</h2>
+      <p>Estamos criando um <big>texto grande</big> e um
+      <small>texto pequeno</small> nesse paragrafo.</p> <!--Big está obsoleto!-->
+    <h2>Texto deletado</h2>
+      <p>podemos marcar <del>um texto como excluido</del> para indicar que ele deve
+      ser lido, mas não considerado. </p>
+    <h2>Texto inserido</h2>
+      <p>Podemos marcar <ins>um texto como inserido</ins> para 
+      dar uma enfase e indicar que ele foi adicionado depois.</p>
+      <p>Existe tambem o <u>sublinhado</u> com a tag U(não semantica)</p>
+    <h2>Texto sobrescrito</h2>
+        <p>Para inserir coisas do tipo x<sup>20</sup>+3</p>
+    <h2>Texto subscrito</h2>
+        <p>Para inserir coisas do tipo H<sub>2</sub>O</p>
+    <h2>Codigo-fonte</h2>
+        <p>O comando <code>document.getElementById('teste')</code>
+        é escrito em linguagem Javascript.</p>
+        <pre>
+          <code>
+            num = int(input('Digite um numero'))
+            if num % 2 == 0:
+              print(f'O número {num} é PAR')
+            else:
+              print(f'O número {num} é IMPAR')
+            print('Fim do programa')
+          </code>
+        </pre>
+     <h2>Citações simples</h2>
+     <p>Como diria o pai de um amigo: <q>o computador
+      é um burro muito rápido</q></p>
+     <h2>Citações completas</h2>
+     <p>Segundo Jeff Noble, no seu libro HTML para Leigos:
+      <blockquote cite="https://www.youtube.com/watch?v=4ynvsrkamt8&list=PLHz_AreHm4d
+      kZ9-atkcmcBaMZdmLHft8n&index=24&ab_channel=CursoemV%C3%ADdeo">
+        A diferença entre elementos inline e um bloco de 
+        texto é importante. blablablablablalbalbablalba
+      </blockquote>
+     </p>
+     <h2>Abreviações</h2>
+     <p>Estou estudando <abbr title="Hypertext Markup Language">HTML</abbr>
+     e <abbr title="Cascading Style Sheet">CSS</abbr> e estou achando uma merda!</p>
+     <h2>Texto invertido</h2>
+      <p><bdo dir="rtl">Vai tomar no cu negros kk</bdo></p>
+  <h1>Trabalhando com listas</h1>
+  <hr>
+      <h2>Listas Ordenadas</h2>
+        <ol type="1" start="4"> <!--other types: A/a/i/I-->
+          <li>Acordar</li>
+          <li>Tomar cafe</li>
+          <li>chupeta</li>
+        </ol>
+      <h2>Listas nao Ordenadas</h2>
+        <ul type="disc"> <!--other types: circle/square-->
+          <li>saco</li>
+          <li>manteiga</li>
+          <li>Pao</li>
+        </ul>
+      <h2>Listas Mistas</h2>
+        <h3>Shoppings</h3>
+        <ul>
+          <li>Norte Shopping</li>
+          <ul>
+            <li>muito bom</li>
+          </ul>
+            
+          <li>Nova America</li>
+          <ul>
+            <li>muito lixo kk</li>
+          </ul>
+        </ul>
+      <h2>Lista de Definições</h2>
+        <dl>HTML</dl>
+          <dd>Linguagem de marcação para criação de conteúdo
+            de um site
+          </dd>
+        <dl>CSS</dl>
+          <dd>Linguagem de marcação para criação de design de 
+            um site.
+          </dd>
+  <h1>Links</h1>
+  <hr>
+    <h2>Usando links externos</h2>
+      <p>Site do youtube: <a href="https://www.youtube.com/" target="_blank" rel="external">youtube.com</a></p>
+      <p>Site do next js: <a href="https://nextjs.org/" target="_blank" rel="external">https://nextjs.org/</a></p>
+    <h2>Usando links internos</h2>
+      <p>Esta é a primeira página do site. Se voce quiser,
+        pode acessar também a minha <a href="exemploLinkInt.html" target="_self" rel="next">segunda página</a>
+      </p>
+      <p>Este site é um oferecimento de <a href="https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjw8e3Sn-j6AhVHNrkGHWXvCRQQPAgI" target="_blank" rel="nofollow">google.com</a></p>
+    <h2>Links para download</h2>
+      <ul>
+        <li><a href="../../Downloads/ACAPELA - VEM ME DA UM VAPO VAPO ( MUNDO DOS DJS ) MC JHENNY.mp3" download="ACAPELA - VEM ME DA UM VAPO VAPO ( MUNDO DOS DJS ) MC JHENNY.mp3"
+          type="audio/mpeg">Baixar musica braba</a></li>
+        <li><a href="../cargos.txt" download="cargos.txt" type="text/txt">sla</a></li>
+      </ul>
+  <h1>Reprodução de Áudio</h1>
+  <hr>
+      <audio preload="metadata" autoplay controls loop>
+        <source src="../../../Documents/Image-Line/FL Studio/Projects/ei.mp3" type="audio/mpeg">
+        <source src="../../../Documents/Image-Line/FL Studio/Projects/ei.ogg" type="audio/ogg">
+        <source src="../../../Documents/Image-Line/FL Studio/Projects/ei.wav" type="audio/wav">
+        <p>Seu navegador não tem compatibilidade com reprodução
+          de áudio.
+        </p>
+      </audio>
+  <h1>Reprodução de Vídeo</h1>
+  <hr>
+      <h2>Vídeos inseridos localmente</h2>
+      <video width ="200"poster="../modulo1/logo-nike200.jpg" controls>
+        <source src="../modulo1/man.mp4" type="video/mp4">
+        <source src="../modulo1/man.webm" type="video/webm">
+        <source src="../modulo1/man.ogv" type="video/ogg">
+        <p>Seu navegador não tem compatibilidade com Reproduçãod
+          de vídeos.
+        </p>
+      </video>
+      <h2>Vídeos inseridos da internet</h2> <!--Vímeo um pouco mais flúido e profissional que o yt, porém são bem parecidos-->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/TNQsmPf24go" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>

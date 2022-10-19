@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+/*
+    # = id
+    . = class
+    : = pseudo-class
+    :: = pseudo-element
+    > = children
+*/
+
+@font-face {
+  font-family: 'RobotoSlab';
+  src: url('RobotoSlab-VariableFont_wght.ttf')
+  format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+
+body{
+  background-color: #d6fde9;
+  font-family: 'Roboto Mono', monospace;
+  /* 
+  Medidas Absolutas
+  cm, mm, in, px, pt, pc
+
+  Medidas Relativas
+  em, ex, rem, vw, vh, % 
+  16px geralmente = 1em
+
+  Medidas mais utilizadas
+  e recomendadas pelo w3c:
+  em e px
+  */
+  font-size: 1.5₢em;
+}
+
+h1 {
+  /* shorthand font
+  - font-style -> font-weight -> font-size ->    font-family 
+  
+  font-family:'word sans',sans serif;
+  font-weight: bolder;
+  font-style: italic;
+  font-size: 3em;
+  
+  */
+  font: italic bolder 3em Arial,sans-serif;
+  color: #1e402f;
+}
+
+h1#principal{
+  text-align: center;
+  color: white;
+  background-color: #3c805e;
+}
+
+h2  {
+  font-family: 'RobotoSlab';
+  color: #3c805e;
+}
+
+p{
+  text-indent: 10px;
+}
+
+.basico {
+  color: #3c805e ;
+}
+
+.intermediario {
+  color: #aa9a04;
+}
+
+.avancado {
+  color: #803c3c;
+}
+
+div:hover{
+  color: #803c3c
+}
+
+div > p {
+  display: none;
+}
+
+div:hover > p{
+  display: block;
+}
+
+p#koe{
+  text-indent: 0px;
+}
+
+
+hr{
+  background-color: black;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited{
+  color:#803c3c;
+}
+
+a:hover{
+  color: black;
+  text-decoration: underline;
+}
+
+a:active{
+  color: #aa9a04;
+}
+
+a::before{
+  content: '⇀';
+}
+
+a::after{
+  content: '↽';
+}
+
+ul{
+  margin: auto;
+}
+
+p#copy {
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+hr{
+  margin: 20px 0px 20px 0px;
+}
+
+footer{
+  display: flex;
+  margin-bottom: 30px;
+}
+
+
