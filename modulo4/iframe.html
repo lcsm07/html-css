@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe test</title>
+  <style>
+    iframe {
+      width: 500px;
+      height: 500px;
+      border: 1px solid black;
+      box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.335);
+      border-radius: 10px 0px;
+    }
+
+    body {
+      font-family: monospace;
+    }
+
+    iframe#iframe2{
+      width: 95vw;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ATRIBUTOS DE SEGURANÇA DE IFRAME
+       
+       sandbox = "sandbox" > bloqueia todo e qualquer acesso que outros sites que estejam dentro do iframe podem fazer em seu site
+
+       referrerpolicy = "no-referrer" > bloqueia todo e qualquer acesso a informaçao para mostrar o que voce deseja
+  
+  
+  
+  
+  -->
+
+
+
+
+
+  <h1>Iframe test</h1>
+  <iframe src="https://desenvolvimentoparaweb.com/css/unidades-css-rem-vh-vw-vmin-vmax-ex-ch/" frameborder="0" scrolling="yes" sandbox="sandbox" referrerpolicy="no-referrer">
+    <p>Your navigator is not compatible with this feature.</p>
+  </iframe>
+  <iframe src="modulo2/site_android/index.html" frameborder="0">
+    <p>Your navigator is not compatible with this feature.</p>
+  </iframe>
+  <h1>Do a choice</h1>
+  <ul>
+    <li><a href="modulo3/site_cordel/index.html" target="name">First Page</a></li>
+    <li><a href="modulo3/exercicios aleatorios/table4.html" target="name">Second Page</a></li>
+    <li><a href="modulo3/exercicios aleatorios/centralizacao.html" target="name">Third Page</a></li>
+  </ul>
+
+  <iframe id="iframe2" src="iframe2.html" frameborder="0" name="name"></iframe>
+</body>
+</html>
