@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+</head>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+<body>
+  <h1>Form Test</h1>
+  <form action="cadastro.js" method="POST" autocomplete="on">
+    <p>
+      <label for="iuser">User:</label>
+      <input type="text" name="nome" id="iuser" required minlength="5" maxlength="15" size="13" placeholder="nome de usuário" autocomplete="username">
+    </p>
+    <p>
+      <label for="ipassword">Password:</label>
+      <input type="password" name="password" id="ipassword" required minlength="8" size="13" placeholder="minimo oito letras" autocomplete="current-password"></p>
+    <p>
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Limpar">
+    </p>
+  </form>
+</body>
+</html>

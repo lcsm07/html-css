@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: monospace;
+}
+
+header {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  padding: 10px;
+  font-size: 3em;
+  text-align: center;
+}
+
+article {
+  display: block;
+  margin: auto;
+  width: 600px;
+  padding-top: 30px;
+}
+
+article > h2 {
+  font-size: 1.5em;
+}
+
+p {
+  padding: 10px;
+  text-indent: 10px;
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+
+menu ul {
+  background-color: gray;
+  list-style-type: none;
+  padding: 10px;
+}
+
+menu li {
+  background-color: rgb(37, 37, 37);
+  padding: 7px;
+  display:inline-block;
+
+}

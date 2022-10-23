@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    font-family: monospace;
+  }
+</style>
+<body>
+  <h1>Teste de Formulario</h1>
+  
+  <form action="cadastro.js" method="ged" autocomplete="on">
+
+    <fieldset>
+      <legend>Dados Pessoais</legend>
+      <p>
+        <label for="inome">Nome: </label>
+        <input type="text" name="
+        nome" id="inome" placeholder="Ex:Jose da Silva" required minlength="4" autocomplete="username">
+      </p>
+      <p>
+        <label for="imedia">Media: </label>
+        <input type="number" name="media" id="imedia" placeholder="0 a 10" step="0.25" value="5" >
+      </p>
+      <p>
+        <label for="idata">Data da Prova: </label>
+        <input type="date" name="data" id="idata" placeholder="dd/mm/aaaa" >
+      </p>
+      <p>
+        <label for="ihora">Horario da Prova: </label>
+        <input type="time" name="tempo" id="ihora">
+      </p>
+      <p>
+        <label for="iemail">Email</label>
+        <input type="email" name="email" id="iemail" autocomplete="email" required>
+      </p>
+      <p>
+        <label for="itel">Telefone</label>
+        <input type="tel" name="tel" id="itel" autocomplete="tel" pattern="^\(\d{2}\)d{4,5}-\d{4}$" required placeholder="(xx)xxxx-xxxx">
+      </p>
+      <input type="submit" value="Enviar">
+      <input type="reset" value="Limpar">
+    </fieldset>
+
+    <fieldset>
+      <legend>Esportes Favoritos</legend>
+      
+      <input type="checkbox" name="esfut" id="iesfut"><label for="iesfut">Futebol</label> <br> 
+      
+      <input type="checkbox" name="esbasq" id="iesbasq"> <label for="iesbasq">Basquete</label> <br> 
+      
+      <input type="checkbox" name="esvolei" id="iesvolei"> <label for="iesvolei">Volei</label> <br> 
+      
+      <input type="checkbox" name="esnat" id="iesnat"> <label for="iesnat">Natação</label> <br>
+      
+      <input type="checkbox" name="esfut" id="esfut"> Lol <br>
+    </fieldset>
+    <fieldset>
+      <legend>Sexo</legend>
+      <input type="radio" name="Sexo" id="ihomem"> <label for="ihomem">Masculino</label>
+      <input type="radio" name="Sexo" id="imulher"> <label for="imulher">Feminino</label>
+    </fieldset>
+    <fieldset>
+      <legend>Customization</legend>
+      
+      <p>
+        <label for="icor">Cor: </label>
+        <input type="color" name="cor" id="icor"> 
+      </p>
+
+      <p>
+        <label for="isat">Nível de Satisfação</label>
+        <input type="range" name="sat" id="isat" min="1" max="5" value="1">
+      </p>
+
+      <p>
+        <label for="ifoto">Foto de Perfil</label>
+        <input type="file" name="foto" id="ifoto">
+      </p>
+    </fieldset>
+</form>
+</body>
+</html>
