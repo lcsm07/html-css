@@ -15,6 +15,18 @@
   font-weight: normal;
   font-style: normal;
 
+  /* 
+      Tipos de format()
+        - opentype (otf)
+        - truetype (ttf)
+        - embedded-opentype
+        -truetype-aat (Apple Advanced Typography)
+        - svg
+  */
+
+
+
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');

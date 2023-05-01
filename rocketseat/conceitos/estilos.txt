@@ -1,0 +1,582 @@
+-------------- A Cascata (cascading) --------------------
+
+Seu estilo é lido de cima para baixo.
+
+É levado em consideração 3 fatores.
+
+1. Origem do estilo
+2. Especificidade
+3. Importância
+
+# Origem do estilo
+
+inline > tag style > tag link
+
+#Especificidade
+
+É um cálculo matemático, onde, cada tipo de seletor e origem do estilo, possuem valores a serem considerados.
+
+0. Universal selector, combinators and negation pseudo-class (:not())
+1. Element type selector e pseudo-elements (::before, ::after)
+10. Classes e attribute selectors ([type="radio"])
+100. ID selector
+1000. inline
+
+#A regra !important
+
+* cuidado, evite o uso
+* não é considerado uma boa prática
+* quebra o fluxo natural da castaca
+
+-------------------- At-rules ---------------------------
+
+* Está relacionado ao comportamento do CSS
+* começa com o sinal de '@' seguido do identificador e valor
+
+# Exemplos comuns
+
+- @import /* incluir um CSS externo */
+- @media /* regras condicionais para dispositivos */
+- @font-face /* fontes externas */
+- @keyframes /* Animation */
+
+-------------------- Shorthand --------------------------
+
+* junção de propriedades
+* resumido
+* legível
+
+```css
+
+{
+  
+  background-color: #000;
+  background-image: url(images/bg.gif);
+  background-repeat: no-repeat;
+  background-position: left top; 
+
+  background: #000 url(images/bg.gif) no-repeat left top;
+
+}
+
+{
+
+  font-style: italic;
+  font-weight: bold;
+  font-size: .8em;
+  line-height: 1.2;
+  font-family: Arial, sans-serif;
+
+  font: italic bold .8em/1.2 Arial, sans-serif;
+
+}
+
+* valores não especificados irão assumir o valor padrão
+* geralmente, a ordem descrita não importa, mas, se houver muitas propriedades com valores semelhantes, poderemos encontrar problemas
+
+------------------ Vendor Prefixes ------------------------- 
+
+* Permite que browsers adicione 'features' a fim 
+de colocar em uso alguma novidade que vemos no CSS
+
+# Exemplo 
+
+```css
+
+p {
+  
+  -webkit-background-clip: text; /* Chrome, Safari, iOS e Android */ 
+  -moz-background-clip: text; /* Mozilla */
+  -ms-background-clip: text;  /* Internet Explorer */
+  -o-background-clip: text;   /* Opera */
+
+}
+
+---------------- Tipos numéricos --------------------------
+
+<integer> - número inteiro como -10 ou 223
+<number> - número decimal como -2.4, 64 ou 0.234
+<dimension> - é um <number> com uma unidade junto: 90deg, 2s, 8px
+<percentage> - representa uma fração de outro número: 50%
+
+# Unidades comuns
+
+<length> - é um dos mais usados no CSS e representa um valor de distância: px, em, vw
+<angle> - representa um ângulo: deg, rad, turn
+<time> - representa um tempo: s, ms
+<resolution> - representa resoluções para dispositivos: dpi
+
+------------ Distâncias absolutas e relativas -------------
+
+* São fixas e não alteram seu valor.
+
+| Unidade  | Nome                | Equivalência         |
+|----------|---------------------|----------------------|
+| cm       | Centímetros         | 1cm = 96px/2.54      | 
+| in       | Inches (polegadas)  | 1in = 2.54cm = 96px  | 
+| px       | Pixels              | 1px = 1/96th of 1in  |
+
+*o mais comum e mais utilizado é o px
+*não é recomendado usar cm
+
+# Distâncias relativas
+
+* São relativas a um outro valor, pode ser o elemento pai, ou root, ou o tamanho da tela.
+* Benefício: Maior adaptação aos diferentes tipos de tela.
+
+| Unidade  | Relativo a                                    |
+|----------|-----------------------------------------------|
+| em       | Tamanho da font do elemento pai               |
+| rem      | Tamanho da font do elemento raiz (root/html)  | 
+| vw       | 1% da viewport wid                            |  
+| vh       | 1% da viewport height                         |
+
+Normalmente o tamanho da font padrão do navegador é de 16px e para mudar esse valor temos que fazer a alteração no root ou no elemento html.
+
+:root {
+	font-size: 18px;
+}
+
+/* OU */
+
+html {
+	font-size: 18px;
+}
+
+O viewport é a parte da tela que está sendo exibida. No caso dos navegadores web, é o que é exibido na janela/tela do documento. Conteúdos que estão fora do viewport só serão exibidos quando feito um scroll da área de visualização.
+
+---------------- Box Sizing -------------------------
+
+{
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  margin 10%;
+  padding: 0 20px;
+}
+
+* Por padrão o navegador vai calcular o tamanho da caixa pelo content-box e vai somar com os outros boxes, no exemplo acima no lugar de 100px a caixa vai ficar com uma largura de 140px. 
+
+* Para que isso não aconteça, é possível mudar qual vai ser a referência para o calculo do tamanho da caixa adicionando a propriedade box-sizing: border-box;.
+
+* Dessa forma o elemento vai ficar com a largura (width) determinado, que no caso do exemplo citado é de 100px.
+
+--------------- Display Block/Inline ----------------
+
+## Display Block
+
+- Ocupa toda a linha, colocando o próximo elemento abaixo desse.
+
+- Width e height são respeitados.
+
+- padding, margin, border irão funcionar normalmente.
+
+## Display inline
+
+- Elemento ao lado do outro.
+
+- Width e height não funcionam.
+
+- Somente valores horizontais de margin, padding e border.
+
+-------------------- Cores -------------------------
+
+/* Global values */
+color: inheritr; /* Herda a cor do elemento anterior */
+color: initial; /* Volta a sua cor inicial */
+color: unset; /* Pega a cor do contexto */
+
+-------------------- Background --------------------
+
+## Background Position
+
+background-position trabalha primeiramente com metricas
+horizontais depois verticais, por exemplo:
+
+background-position: (left-center-rigth) (bottom-center-top);
+background-position: left bottom;
+background-position: rigth top;
+
+## Background Size
+
+background-size: contain; /* insere a imagem dentro da box preservando a resolução */
+background-size: cover; /* insere a imagem dentro da box esticada para preencher toda a box */
+
+## Background Origin
+
+A propriedade background-origin é quem define o ponto de origem de uma imagem específica.
+
+/* Principais valores */
+background-origin: border-box; /* começa a partir da borda */
+background-origin: padding-box; /* começa a partir do padding */
+background-origin: content-box; 
+
+## Background Clip
+
+O background-clip define se a cor ou imagem do background iniciam debaixo de sua área de borda, preenchimento ou conteúdo.
+
+/* Principais valores */
+background-clip: border-box;
+background-clip: padding-box;
+background-clip: content-box;
+background-clip: text;
+
+## Background Attachment
+
+/* Principais valores */
+background-attachment: scroll;
+background-attachment: fixed;
+background-attachment: local;
+
+---------------------- SVG ------------------------
+
+É uma marcação, estilo html, mas não é para textos, e sim para fazer imagens.
+
+
+  Para entender melhor
+  Imagem rasterizada    x    Imagem vetorizada
+  - formada por Pixels       - formada por algoritmo  
+  - png/jpeg/etc..       
+
+Benefícios
+- Mais leve
+- Mais detalhada
+- Maior Acessibilidade e SEO
+- Pode ser editada via CSS ou atributos
+
+Desvantagens
+- Pode ser mais complicada de trabalhar
+- Quanto mais complexa a imagem, mais trabalho para o navegador 
+- Navegadores mais antigos não possuem suporte a svg.
+
+Para fotografias, ainda prefira usar imagens rasterizadas.
+
+--------------------- Positions -------------------
+
+## Relative
+
+O position indica onde o elemento vai ser posicionado na página. 
+
+Ao usar o position podemos adicionar outras propriedades como top, right, bottom, left e z-index, que vão determinar o posicionamento final do elemento.
+
+Quando o position é relative os elementos são deslocados do seu posicionamento normal, mas sem afetar o posicionamento de outros elementos da página.
+
+## Absolute
+
+Quando o position é absolute o elemento é deslocado saindo do fluxo normal. O elemento de position absolute é posicionado em relação ao seu parent element mais próximo. Se esse elemento "pai" não existir, ele será posicionando em relação ao bloco contendo a raiz do elemento.
+
+## Fixed
+
+Quando aplicado o position fixed é como se criasse um elemento flutuante que fica fixo na página, independente do scrolling feito.
+
+----------------- Flexbox ------------------
+
+* Nos permite posicionar os elementos dentro da caixa.
+* Controle em uma dimensão (horizontal ou vertical)
+* Alinhamento, direcionamento, ordenar e tamanhos
+
+## flex-direction
+
+* Qual a direção do flex: horizontal ou vertical
+* row | column
+
+## Alinhamento
+
+* justify-content (horizontal)
+* align - items (vertical)
+
+## Terminologia
+
+- Flex Container 
+  - Flex item
+
+- Nesting > aninhamento
+
+- Axis > eixo 
+  - main > eixo principal
+    - start, end
+  - cross > eixo cruzado
+    - start, end 
+
+- Flex sizing 
+  - flexivel
+  - altera width/heigh dos itens para preenchimento dos espaços do flex Container
+
+## Propriedades do Flex Container
+
+* Direção dos itens
+  
+  - Flex é uma dimensão (horizontal ou vertical)
+  - Podemos mudar a direção com `flex-direction`
+  - valores : (row | row-reverse | column | column-reverse)
+
+* flex-wrap 
+
+  - Podemos usar multi linhas.
+  - Cada nova linha, um novo flex container.
+
+* flex-flow
+
+  - shorthand
+  - flex-direction || flex-wrap
+
+* gap
+
+  - espaços entre os elementos
+  - valores : px, pt, %, em, rem
+
+* flex-basis
+
+  - Trabalha com valores de largura e altura. Em caso de flex direction: column, trabalha com height, em caso de flex direction: row, trabalha com column.
+
+* flex-grow
+
+ - Trabalha com preenchimento interno da box com valores fracionados, por exemplo, para uma box com 4 divs:
+
+ .box div:nth-child(1) {
+  flex-grow: 2;
+ }
+
+ .box div:nth-child(2),
+ .box div:nth-child(3),
+ .box div:nth-child(4) {
+  flex-grow: 1
+ }
+
+ - A primeira box ocupa 2/4 espaços e as demais boxes ocupam 1/4 espaços.
+
+ * flex-shrink
+
+ - Encolhe o item dentro do container.
+
+
+
+
+------------------ Grid-----------------------
+
+* Posicionamento dos elementos dentro da caixa
+* Posicionamento horizontal e vertical ao mesmo tempo
+* Pode ser flexivel ou fixo
+* Cria espaços para os elementos filhos habitarem
+
+---------------- Font -----------------------
+
+## Font Variant
+
+* Faz variações na apresentação da fonte
+
+p {
+	font-variant: small-caps;
+}
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant
+
+## Font Stretch
+
+* Alargamento ou encolhimento da fonte
+* Aceita palavras-chaves como: expanded, condensed, normal
+* Aceita porcentagens de 50% a 200%
+Essa propriedade não vai funcionar em todas as fontes
+
+p {
+	font-stretch: expanded;
+}
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch
+
+## Letter spacing
+
+* Define o espaçamento entre os caracteres
+
+p {
+	letter-spacing: 4px;
+}
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
+
+## Word spacing
+
+* Define o espaçamento entre palavras
+
+p {
+	word-spacing: 1em;
+}
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing
+
+## Line height
+
+* Define os espaços entre linhas
+* Pode ser com unidades ou sem unidades de medida
+* Valores comuns: 1.5 ou 2
+
+p {
+	line-height: 1.5;
+}
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
+
+## Text transform
+
+* Transformação do texto
+* Valores podem ser: none | capitalize | uppercase | lowercase | full-width | full-size-kana
+
+p {
+	text-transform: uppercase;
+}
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform
+
+## Text decoration
+
+* Aparência decorativa de um texto
+
+* line: underline | overline | line-through
+         podemos aplicar mais de 1 valor
+* style: wavy | dotted | double | dashed | solid
+* color: <color> values
+
+h1 {
+	text-decoration: underline; /* shorthand */
+}
+
+p {
+  text-decoration: wavy overline blue; /* shorthand */
+}
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration
+
+## Text shadow
+
+* Sombra aplicada a um texto
+* Permite múltiplos valores
+
+p {
+  text-shadow: 1px 1px 1px red,
+	       2px 2px 1px green; /* offset-x | offset-y | blur-radius | color */
+}
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
+
+---------------- Combinator -----------------
+
+## Adjacent sibling combinator
+
+* Identificado pelo sinal + entre dois seletores
+Seleciona somente o elemento do lado direito que é irmão direto na hierarquia
+
+HTML
+
+<h1>
+  Título
+</h1>
+<p>
+  Esse é um parágrafo
+</p>
+<p>
+  Mais um parágrafo
+</p>
+CSS
+
+h1 + p {
+	color: red;
+}
+
+## General sibling combinator
+
+* Identificado pelo sinal ~ entre dois seletores
+* Seleciona todos os elementos irmãos
+
+HTML
+
+<h1>
+  Título
+</h1>
+<p>
+  Esse é um parágrafo
+</p>
+<p>
+  Mais um parágrafo
+</p>
+CSS
+
+h1 ~ p {
+	color: red;
+}
+
+-------------- Pseudoclass ---------------
+
+## nth-of-type()
+
+* Pega o elemento por tipo e posição
+
+HTML
+
+<ul>
+  <h3>Palavras bonitas</h3>
+  <li>Gratidão</li>
+  <li>Esperança</li>
+  <li>Fé</li>
+</ul>
+
+CSS
+
+ul li:nth-of-type(1) {
+  font-weight: bold;
+}
+
+## nth-child()
+
+* Seleciona o primeiro filho de um grupo de elementos
+
+HTML
+
+<ul>
+	<h3>Palavras bonitas</h3>
+  <li>Gratidão</li>
+  <li>Esperança</li>
+  <li>Fé</li>
+</ul>
+CSS
+
+ul li:nth-child(2) {
+  font-weight: bold;
+}
+
+## focus
+
+* Vai mudar a cor do link para vermelho quando o usuário passar o mouse sobre o link
+
+* :focus é aplicado quando o elemento recebe o foco da ação do usuário que pode ser feita utilizando o teclado ou clicando no elemento com o mouse. 
+
+* É comumente usado em campos de input como uma forma de mostrar qual o input "ativo".
+
+input:focus {
+  border-color: red;
+}
+
+## disabled
+
+:disabled
+
+HTML
+
+<input type="text" disabled>
+
+CSS
+
+input:disabled {
+  background-color: green;
+}
+
+## required
+
+:required
+
+HTML
+
+<input type="text" required>
+
+CSS
+
+input:required {
+  background-color: red;
+}
